@@ -3,11 +3,6 @@
  * 
  * It basically let's the onboard led (13) blink when a Midi Note on message is received.
  * 
- * The program is test on an Arduino Uno using Midi library 4.3.1
- * 
- * For more info on the midi library see:
- * http://arduinomidilib.fortyseveneffects.com/index.html
- *
  */
 #include <MIDI.h>
 
@@ -22,7 +17,7 @@ void setup() {
   pinMode(LED, OUTPUT);
   // Set the channel to listen on. MIDI_CHANNEL_OMNI means all channels.
   MIDI.begin(MIDI_CHANNEL_OMNI);
-
+  
   // Set Callbacks for specific MIDI commands.
   MIDI.setHandleNoteOn(handleNoteOn);
   MIDI.setHandleNoteOff(handleNoteOff);
